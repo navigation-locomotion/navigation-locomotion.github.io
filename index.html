@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Coupling Vision and Proprioception for Navigation of Legged Robots">
+  <meta name="keywords" content="Locomotion, Biomechanics, Energetics, Reinforcement Learning, Emergent Behaviors">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coupling Vision and Proprioception for Navigation of Legged Robots</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <link rel="icon" href="./favicon.ico?">
+
+  <meta property="og:site_name" content="Coupling Vision and Proprioception for Navigation of Legged Robots" />
+  <meta property="og:type" content="video.other" />
+  <meta property="og:title" content="Coupling Vision and Proprioception for Navigation of Legged Robots" />
+  <meta property="og:url" content="https://navigation-locomotion.github.io/" />
+  <meta property="og:image" content="https://navigation-locomotion.github.io/static/images/preview.jpg" />
+  <meta property="og:image:secure" content="https://navigation-locomotion.github.io/static/images/preview.jpg" />
+  <meta property="og:video" content="https://www.youtube.com/embed/NLV8uYU-lV0" />
+  <meta property="og:video:secure" content="https://www.youtube.com/embed/NLV8uYU-lV0" />
+
+  <meta property="article:publisher" content="https://markfzp.github.io" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Coupling Vision and Proprioception for Navigation of Legged Robots" />
+  <meta name="twitter:url" content="https://navigation-locomotion.github.io/" />
+  <meta name="twitter:image" content="https://navigation-locomotion.github.io/static/images/preview.jpg" />
+  <meta property="og:image:width" content="1600" />
+  <meta property="og:image:height" content="900" />
+
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <meta name="twitter:card" content="player" />
+  <meta name="twitter:image" content="https://navigation-locomotion.github.io/static/images/preview.jpg" />
+  <meta name="twitter:player" content="https://www.youtube.com/embed/NLV8uYU-lV0" />
+  <meta name="twitter:player:width" content="640" />
+  <meta name="twitter:player:height" content="360" />
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Coupling Vision and Proprioception for <br/> Navigation of Legged Robots</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Anonymous CVPR Submission
+              <span class="brmod">Paper ID 6744</span>
+            </span>
+          </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="hero-body">
+    <div class="columns is-centered">
+      <div class="column is-9">
+        <div class="is-centered">
+          <video autoplay muted loop playsinline style="width: 45%; border: 1px solid #bbb; border-radius: 10px; margin: 2.0%;">
+            <source src="./resources/glass_door_comparison_teaser.mp4" type="video/mp4">
+          </video>
+          <video autoplay muted loop playsinline style="width: 45%; border: 1px solid #bbb; border-radius: 10px; margin: 2.0%;">
+            <source src="./resources/human_obstacle_comparison_teaser.mp4" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            <strong>Coupling vision and proprioception helps navigation in situations where vision alone is not enough</strong>
+          </h2>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-two-thirds">
+        <h2 class="title is-2">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We exploit the complementary strengths of vision and proprioception to achieve point goal navigation in a legged robot. Legged systems are capable of traversing more complex terrain than wheeled robots, but to fully exploit this capability, we need the high-level path planner in the navigation system to be aware of the walking capabilities of the low-level locomotion policy on varying terrains. We achieve this by using proprioceptive feedback to estimate the safe operating limits of the walking policy, and to sense unexpected obstacles and terrain properties like smoothness or softness of the ground that may be missed by vision. The navigation system uses onboard cameras to generate an occupancy map and a corresponding cost map to reach the goal. The FMM (Fast Marching Method) planner then generates a target path. The velocity command generator takes this as input to generate the desired velocity for the locomotion policy using as input additional constraints, from the safety advisor, of unexpected obstacles and terrain determined speed limits. We show superior performance compared to wheeled robot (LoCoBot) baselines, and other baselines which have disjoint high-level planning and low-level control. We also show the real-world deployment of our system on a quadruped robot with onboard sensors and compute. 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/ Abstract. -->
+
+  <br/>
+  <br/>
+  <div id="method_video" class="columns is-centered has-text-centered">
+    <div class="column is-two-thirds">
+      <h2 class="title is-2">Project Video</h2>
+      <div class="publication-video">
+        <iframe src="https://www.youtube.com/embed/U34nDkcrMXI"
+                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+  <!--/ Paper video. -->
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-2" style="text-align: center;">Navigation in Cluttered Indoor Settings</h2>
+        <tr>
+          <td>
+            <br>
+            <div class="columns is-centered has-text-centered">
+              <video controls src="./resources/indoor_longrange_converted.mp4" style="border: 1px solid #bbb; border-radius: 10px; width: 80%; margin-bottom: 50px;">
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+              <h2 class="subtitle has-text-centered">
+                  The robot can navigate even with glass doors, rough terrain and extra 2kg of payload added during walking. Propriopcetion enables slowing down for safety.
+              </h2>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <br>
+            <div class="columns is-centered has-text-centered">
+              <video controls src="./resources/indoor_cluttered_converted.mp4" style="border: 1px solid #bbb; border-radius: 10px; width: 80%; margin-bottom: 50px;">
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+              <h2 class="subtitle has-text-centered">
+                  The robot can navigate to exit a cluttered lab environment full of objects of different shapes, textures and lightning conditions and can recover from collision with the unexpected obstacles using proprioception. 
+              </h2>
+          </td>
+        </tr>
+      </div> 
+    </div>
+
+    <!-- <br><br><br><br> -->
+  </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-2" style="text-align: center;">Outdoor Navigation</h2>
+            <tr>
+              <td>
+                <br>
+                <div class="columns is-centered has-text-centered">
+                  <video controls src="./resources/inthewild_converted.mp4" style="border: 1px solid #bbb; border-radius: 10px; width: 80%; margin-bottom: 50px;">
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                  <h2 class="subtitle has-text-centered">
+                      Navigation in the wild with a goal of entering a building 30m away. The robot needs to go through water puddles and lawns. To furthur increase the difficulty, a 2kg mass is thrown at the robot and an unexpected human obstacle blindsided it. The robot can overcome these by coupling vision and proprioception.   
+                  </h2>
+              </td>
+            </tr>
+          </div> 
+        </div>
+    
+        <!-- <br><br><br><br> -->
+      </section>
+
+        <section class="section">
+          <div class="container">
+            <div class="columns is-centered">
+              <div class="column is-full-width">
+                <h2 class="title is-2" style="text-align: center;">Collision Detector</h2>
+                <tr>
+                  <td>
+                    <br>
+                    <div class="columns is-centered has-text-centered">
+                      <video controls src="./resources/collision_detector_converted.mp4" style="border: 1px solid #bbb; border-radius: 10px; width: 80%; margin-bottom: 50px;">
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                      <div class="columns is-centered has-text-centered">
+                        <img src="./resources/collision_detector.png" style="width: 80%; margin-bottom: 50px;">
+                      </div>
+                      <h2 class="subtitle has-text-centered">
+                          The robot collides with a glass door (invisible to the onboard camera), detects the collision using proprioception and then walks around it to reach the goal. The vision-only baseline fails. 
+                      </h2>
+                  </td>
+                </tr>
+              </div> 
+            </div>
+        
+            <!-- <br><br><br><br> -->
+          </section>
+
+          <section class="section">
+            <div class="container">
+              <div class="columns is-centered">
+                <div class="column is-full-width">
+                  <h2 class="title is-2" style="text-align: center;">Vision + Proprioception vs. Only Vision</h2>
+                  <tr>
+                    <td>
+                      <br>
+                      <div class="columns is-centered has-text-centered">
+                        <video controls src="./resources/vision_v_prop_night_converted.mp4" style="border: 1px solid #bbb; border-radius: 10px; width: 80%; margin-bottom: 20px;">
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                        <h2 class="subtitle has-text-centered" style="margin-bottom: 50px;">
+                            Avoiding a tree using proprioception. In low-lighting conditions, the depth camera is unable to detect the tree.
+                        </h2>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <br>
+                      <div class="columns is-centered has-text-centered">
+                        <video controls src="./resources/vision_v_prop_human_converted.mp4" style="border: 1px solid #bbb; border-radius: 10px; width: 80%; margin-bottom: 20px;">
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                        <h2 class="subtitle has-text-centered" style="margin-bottom: 50px;">
+                            A human obstacle suddenly appearing from outside of FoV. The robot relies on proprioception to detect the collision and navigate around it. 
+                        </h2>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <br>
+                      <div class="columns is-centered has-text-centered">
+                        <video controls src="./resources/vision_v_prop_glass_converted.mp4" style="border: 1px solid #bbb; border-radius: 10px; width: 80%; margin-bottom: 20px;">
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                        <h2 class="subtitle has-text-centered" style="margin-bottom: 50px;">
+                            A glass obstacle is invisible to the depth camera. By using proprioception, the robot can recover from the collision and successfully reach the goal. 
+                        </h2>
+                    </td>
+                  </tr>
+                </div> 
+              </div>
+          
+              <!-- <br><br><br><br> -->
+            </section>
+
+            <section class="section">
+              <div class="container">
+                <div class="columns is-centered">
+                  <div class="column is-full-width">
+                    <h2 class="title is-2" style="text-align: center;">Fall Predictor</h2>
+                    <tr>
+                      <td>
+                        <br>
+                        <div class="columns is-centered has-text-centered">
+                          <video controls src="./resources/fall_predictor_converted.mp4" style="border: 1px solid #bbb; border-radius: 10px; width: 80%; margin-bottom: 50px;">
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                          <div class="columns is-centered has-text-centered">
+                            <img src="./resources/fall_predictor.png" style="width: 80%; margin-bottom: 50px;">
+                          </div>
+                          <h2 class="subtitle has-text-centered">
+                              The fall predictor predicts a high probability of falling down when the robot is walking on unstable planks and decreases the command velocity to safer values. 
+                          </h2>
+                      </td>
+                    </tr>
+                  </div> 
+                </div>
+            
+                <!-- <br><br><br><br> -->
+              </section>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>Page template borrowed from <a href="https://worldsheet.github.io/"><span class="dnerf">WorldSheet</span></a> and <a href="https://energy-locomotion.github.io/"><span class="dnerf">Energy-Locomotion</span></a>.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
